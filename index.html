@@ -1,0 +1,159 @@
+<!-- STEP 1: ENVELOPE -->
+<div id="step1" class="flex flex-col items-center justify-center text-center space-y-8 w-full">
+  <div class="space-y-2">
+    <span class="inline-block bg-white/80 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold text-rose-600 tracking-wider uppercase border border-rose-100 shadow-sm">
+      Special Delivery 💌
+    </span>
+    <h1 class="text-3xl font-extrabold text-slate-800">For My Favorite Person</h1>
+    <p class="text-slate-500 text-sm">Tap the envelope to see what's inside</p>
+  </div>
+
+  <div class="envelope-wrapper my-8">
+    <div id="envelope" class="envelope" onclick="openEnvelope()">
+      <div class="envelope-top"></div>
+      <div class="envelope-left"></div>
+      <div class="envelope-right"></div>
+      <div class="envelope-bottom"></div>
+      <div class="wax-seal">❤️</div>
+      <div class="letter flex flex-col items-center justify-center space-y-2">
+        <span class="text-xs text-rose-500 font-semibold uppercase tracking-widest">Secret Note</span>
+        <p class="font-cursive text-2xl text-slate-800">Hey <span class="partner-name">Pebble</span>...</p>
+        <p class="text-[11px] text-slate-500">I made something small for you ✨</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2: PROPOSAL (DODGING NO BUTTON) -->
+<div id="step2" class="hidden flex-col items-center justify-center text-center space-y-8 w-full bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white">
+  <div class="w-20 h-20 bg-rose-100 rounded-full flex items-center justify-center text-4xl shadow-inner mb-2">
+    🥺
+  </div>
+  
+  <div class="space-y-3">
+    <h2 class="text-3xl font-extrabold text-slate-800">
+      Will you go on a date with me, <span class="partner-name text-rose-600">Pebble</span>?
+    </h2>
+    <p class="text-slate-500 text-sm">I promise good food and endless laughs ✨</p>
+  </div>
+
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full pt-4 min-h-[100px] relative">
+    <button id="yesBtn" onclick="acceptProposal()" class="w-full sm:w-auto bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-rose-500/30 transition-all text-lg">
+      YES! Absolutely 💕
+    </button>
+  </div>
+</div>
+
+<!-- STEP 3: PICK VIBE & FOOD -->
+<div id="step3" class="hidden flex-col items-center justify-center space-y-6 w-full bg-white/80 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-white">
+  <div class="text-center space-y-1">
+    <span class="text-xs font-bold text-rose-500 tracking-wider uppercase">Yay! She said YES! 🎉</span>
+    <h2 class="text-2xl font-bold text-slate-800">Pick Our Plan, <span class="partner-name text-rose-600">Pebble</span></h2>
+    <p class="text-slate-500 text-xs">Choose what sounds best to you</p>
+  </div>
+
+  <!-- VIBE -->
+  <div class="w-full space-y-2">
+    <label class="text-xs font-bold text-slate-700 uppercase tracking-wider block">1. The Vibe</label>
+    <div class="grid grid-cols-2 gap-3">
+      <div onclick="selectVibe(this, 'Sunset & Coffee 🌅')" class="card-option vibe-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🌅</div>
+        <div class="text-xs font-bold text-slate-800">Sunset & Coffee</div>
+      </div>
+      <div onclick="selectVibe(this, 'Arcade Games 🕹️')" class="card-option vibe-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🕹️</div>
+        <div class="text-xs font-bold text-slate-800">Arcade Fun</div>
+      </div>
+      <div onclick="selectVibe(this, 'Late Night Drive 🌙')" class="card-option vibe-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🌙</div>
+        <div class="text-xs font-bold text-slate-800">Late Drive</div>
+      </div>
+      <div onclick="selectVibe(this, 'Cozy Movie Night 🍿')" class="card-option vibe-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🍿</div>
+        <div class="text-xs font-bold text-slate-800">Movie Night</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOD -->
+  <div class="w-full space-y-2">
+    <label class="text-xs font-bold text-slate-700 uppercase tracking-wider block">2. Food Cravings</label>
+    <div class="grid grid-cols-2 gap-3">
+      <div onclick="selectFood(this, 'Pizza & Drinks 🍕')" class="card-option food-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🍕</div>
+        <div class="text-xs font-bold text-slate-800">Pizza Night</div>
+      </div>
+      <div onclick="selectFood(this, 'Sushi Date 🍱')" class="card-option food-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🍱</div>
+        <div class="text-xs font-bold text-slate-800">Sushi Time</div>
+      </div>
+      <div onclick="selectFood(this, 'Street Food 🌮')" class="card-option food-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🌮</div>
+        <div class="text-xs font-bold text-slate-800">Street Food</div>
+      </div>
+      <div onclick="selectFood(this, 'Dessert Hunt 🍦')" class="card-option food-card p-3 rounded-2xl bg-white border-2 border-slate-100 cursor-pointer text-center space-y-1">
+        <div class="text-2xl">🍦</div>
+        <div class="text-xs font-bold text-slate-800">Desserts</div>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="goToStep(4)" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-2xl shadow-lg transition-all text-sm mt-2">
+    Next: Pick Date & Location ✨
+  </button>
+</div>
+
+<!-- STEP 4: DATE, TIME & LOCATION -->
+<div id="step4" class="hidden flex-col items-center justify-center space-y-6 w-full bg-white/80 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-white">
+  <div class="text-center space-y-1">
+    <span class="text-xs font-bold text-rose-500 tracking-wider uppercase">Almost Done!</span>
+    <h2 class="text-2xl font-bold text-slate-800">When & Where?</h2>
+    <p class="text-slate-500 text-xs">Set the details for our date, <span class="partner-name text-rose-600">Pebble</span></p>
+  </div>
+
+  <div class="w-full space-y-4">
+    <div>
+      <label class="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-1">Preferred Date</label>
+      <input type="date" id="dateInput" class="w-full bg-white border-2 border-slate-100 rounded-2xl p-3 text-sm font-semibold text-slate-800 focus:border-rose-500 focus:outline-none shadow-sm">
+    </div>
+
+    <div>
+      <label class="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-1">Time of Day</label>
+      <div class="grid grid-cols-3 gap-2">
+        <button type="button" onclick="selectTime(this, 'Afternoon')" class="time-btn bg-white border-2 border-slate-100 p-2.5 rounded-xl text-xs font-bold text-slate-700 text-center hover:border-rose-400">Afternoon</button>
+        <button type="button" onclick="selectTime(this, 'Sunset')" class="time-btn bg-white border-2 border-slate-100 p-2.5 rounded-xl text-xs font-bold text-slate-700 text-center hover:border-rose-400">Sunset</button>
+        <button type="button" onclick="selectTime(this, 'Night')" class="time-btn bg-white border-2 border-slate-100 p-2.5 rounded-xl text-xs font-bold text-slate-700 text-center hover:border-rose-400">Night</button>
+      </div>
+    </div>
+
+    <div>
+      <label class="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-1">Pickup Location</label>
+      <input type="text" id="locationInput" placeholder="Where should I pick you up?" class="w-full bg-white border-2 border-slate-100 rounded-2xl p-3 text-sm font-semibold text-slate-800 placeholder-slate-400 focus:border-rose-500 focus:outline-none shadow-sm">
+    </div>
+  </div>
+
+  <button onclick="finishDatePlan()" class="w-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold py-4 rounded-2xl shadow-lg shadow-rose-500/30 transition-all text-sm mt-2">
+    Lock It In 💖
+  </button>
+</div>
+
+<!-- STEP 5: FINAL CELEBRATION -->
+<div id="step5" class="hidden flex-col items-center justify-center text-center space-y-6 w-full bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white">
+  <div class="w-20 h-20 bg-rose-100 rounded-full flex items-center justify-center text-4xl shadow-inner animate-bounce">
+    🥳
+  </div>
+
+  <div class="space-y-2">
+    <h2 class="text-3xl font-extrabold text-slate-800">It's a Date! 🎉</h2>
+    <p class="text-slate-500 text-xs">Can't wait to see you, <span class="partner-name text-rose-600">Pebble</span>!</p>
+  </div>
+
+  <div class="w-full bg-rose-50/80 rounded-2xl p-4 text-left border border-rose-100 space-y-2">
+    <div class="text-xs font-bold text-rose-600 uppercase tracking-wider text-center">Date Summary</div>
+    <div id="summaryText" class="text-xs text-slate-700 space-y-1"></div>
+  </div>
+
+  <button onclick="sendWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 text-sm">
+    <span>Send Plan to Me on WhatsApp</span> 📲
+  </button>
+</div>
